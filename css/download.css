@@ -1,20 +1,19 @@
 /* 下载页面专用样式 */
 
-/* 字体定义 */
-@font-face {
-    font-family: '江城斜黑体';
-    src: url('https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/0cdb77540e2da3e9/江城斜黑体 900W (1).woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+/* 页面布局样式 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-:root {
-    --preview-primary: #f1c40f;
-    --preview-secondary: #f39c12;
-    --glass-dark: rgba(16, 24, 39, 0.9);
-    --glass-light: rgba(255, 255, 255, 0.15);
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+/* 主内容区域样式 */
 .download-container {
     margin-top: 100px;
     padding: 2rem;
@@ -22,194 +21,113 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
 }
-.version-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur-strong);
-    border: 1px solid var(--glass-border);
+
+/* 警告提示样式 */
+.warning-container {
+    background: rgba(241, 196, 15, 0.15);
+    border: 1px solid #f1c40f;
     border-radius: 1rem;
     padding: 2rem;
     width: 100%;
     max-width: 800px;
-    transition: var(--transition);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(241, 196, 15, 0.1);
     position: relative;
 }
 
-.version-card::before {
-    content: '';
+.warning-container::before {
+    content: '⚠️';
+    font-size: 3rem;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 100%);
-    pointer-events: none;
-    border-radius: 1rem;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background);
+    padding: 0.5rem;
+    border-radius: 50%;
 }
 
-.version-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* 移除默认边框颜色 */
-.version-card:first-child {
-    border-color: transparent;
-}
-
-.version-card:first-child:hover {
-    border-color: var(--preview-primary);
-    box-shadow: 0 4px 12px rgba(241, 196, 15, 0.2);
-}
-
-.version-card:last-child {
-    border-color: transparent;
-}
-
-.version-card:last-child:hover {
-    border-color: var(--primary);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
-}
-.version-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.version-name {
-    font-family: '江城斜黑体', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+.warning-title {
     font-size: 1.5rem;
-    font-weight: 900;
-    color: var(--primary);
+    font-weight: 700;
+    color: #f1c40f;
+    margin-bottom: 1rem;
 }
-.version-date {
-    color: rgba(255, 255, 255, 0.6);
+
+.warning-text {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
-.version-tag {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-}
-.version-tag.stable {
-    background: rgba(33, 150, 243, 0.2);
-    color: #2196F3;
-    border: 1px solid rgba(33, 150, 243, 0.3);
-}
-.version-tag.preview {
-    background: rgba(241, 196, 15, 0.2);
-    color: var(--preview-primary);
-    border: 1px solid rgba(241, 196, 15, 0.3);
-}
-.download-btn {
+
+/* GitHub按钮样式 */
+.github-releases-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--primary);
+    background: #2196F3;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.75rem;
     text-decoration: none;
-    transition: var(--transition);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
-.download-btn:hover {
+
+.github-releases-btn:hover {
     transform: translateY(-2px);
-    background: var(--secondary);
-    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
-}
-.preview-btn {
-    background: var(--preview-primary) !important;
-}
-.preview-btn:hover {
-    background: var(--preview-secondary) !important;
-    box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3) !important;
-}
-.changelog {
-    margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.8);
-}
-.changelog ul {
-    list-style: none;
-    margin-top: 0.5rem;
-}
-.changelog li {
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-.changelog li::before {
-    content: "•";
-    color: var(--primary);
-    position: absolute;
-    left: 0;
+    background: #1976D2;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
 }
 
+/* 页脚样式 */
+.main-footer {
+    margin-top: auto;
+}
 
+/* 响应式设计 */
 @media (max-width: 768px) {
-    .navbar {
+    .download-container {
+        margin-top: 80px;
         padding: 1rem;
     }
-    .navbar h1 {
-        font-size: 1.4rem;
+    
+    .warning-container {
+        padding: 1.5rem 1rem;
     }
-    .logo-hover {
-        width: 36px;
-        height: 36px;
+    
+    .warning-container::before {
+        font-size: 2rem;
+        top: -20px;
     }
-    .version-card {
-        padding: 1.5rem;
+    
+    .warning-title {
+        font-size: 1.3rem;
     }
-}
-[data-theme="light"] {
-    background: var(--gradient-light);
-    color: #1e293b;
-}
-[data-theme="light"] .navbar {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    
+    .warning-text {
+        font-size: 1rem;
+    }
 }
 
-[data-theme="light"] .version-card {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* 亮色主题适配 */
+[data-theme="light"] .warning-container {
+    background: rgba(241, 196, 15, 0.1);
+    border-color: rgba(241, 196, 15, 0.3);
+    box-shadow: 0 4px 20px rgba(241, 196, 15, 0.05);
 }
-[data-theme="light"] .github-btn {
-    background: rgba(0, 0, 0, 0.05);
-    color: #1e293b;
-    border-color: rgba(0, 0, 0, 0.1);
+
+[data-theme="light"] .warning-container::before {
+    background: white;
 }
-[data-theme="light"] .github-btn:hover {
-    background: rgba(0, 0, 0, 0.1);
+
+[data-theme="light"] .warning-title {
+    color: #e6b400;
 }
-[data-theme="light"] .version-date,
-[data-theme="light"] .changelog {
+
+[data-theme="light"] .warning-text {
     color: #475569;
-}
-
-/* 更新日志图片样式 */
-.changelog-image {
-    margin: 1rem 0;
-    border-radius: 0.5rem;
-    overflow: hidden;
-}
-
-.changelog-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.changelog-image img:hover {
-    transform: scale(1.02);
-}
-
-[data-theme="light"] .changelog-image {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
