@@ -15,4 +15,4 @@
 #### 下载使用github代理下载链接，来应对github在在国内半墙的状态<br>
 #### 感谢下方人员提供代理链接
 #### [fishcpy](https://github.com/fishcpy) download.fishcpy.top
-#### [scfcn](https://github.com/scfcn) hdd.xnet.ren,image.wudu.ltd,imgse.xnet.ren,scdn.星.fun
+#### [scfcn](https://github.com/scfcn) scdn.星.fun
