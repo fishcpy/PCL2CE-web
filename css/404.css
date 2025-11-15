@@ -1,7 +1,7 @@
 /* 字体定义 */
 @font-face {
     font-family: '江城斜黑体';
-    src: url('https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/0cdb77540e2da3e9/江城斜黑体 900W (1).woff2') format('woff2');
+    src: url('/font/Italic.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
