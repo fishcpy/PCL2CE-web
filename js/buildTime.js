@@ -8,4 +8,3 @@ function updateBuildTime() {
 }
 
 document.addEventListener('DOMContentLoaded', updateBuildTime);
-document.addEventListener('pjax:reinitialize', updateBuildTime);
