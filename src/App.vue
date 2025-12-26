@@ -125,7 +125,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 const isMenuOpen = ref(false);
 const currentYear = computed(() => new Date().getFullYear());
@@ -137,6 +137,17 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isMenuOpen.value = false;
 };
+
+// 监听菜单状态，控制 body 滚动
+watch(isMenuOpen, (newValue) => {
+  if (newValue) {
+    // 菜单打开时禁止 body 滚动
+    document.body.style.overflow = 'hidden';
+  } else {
+    // 菜单关闭时恢复 body 滚动
+    document.body.style.overflow = '';
+  }
+});
 </script>
 
 <style scoped>
@@ -277,18 +288,23 @@ const closeMenu = () => {
 .menu-close {
   display: none;
   position: fixed;
-  top: 1.5rem;
-  right: 2rem;
+  top: 1rem;
+  right: 20px;
   z-index: 1001;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
   color: var(--white);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-close:hover {
@@ -430,6 +446,10 @@ const closeMenu = () => {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem 20px;
+  }
+
   .menu-toggle {
     display: flex;
   }
@@ -446,14 +466,20 @@ const closeMenu = () => {
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
     flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 6rem 2rem 2rem;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 999;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-menu.active {
@@ -461,20 +487,49 @@ const closeMenu = () => {
   }
 
   .nav-menu .nav-link {
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1.3rem;
+    color: var(--white);
     padding: 1rem 2rem;
-    border-radius: 1rem;
-    background: rgba(0, 0, 0, 0.05);
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
+    border-radius: var(--border-radius-lg);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 2px solid var(--glass-border);
+    width: 100%;
+    max-width: 320px;
     text-align: center;
+    font-weight: 600;
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s ease;
   }
 
-  .nav-menu .nav-link:hover {
-    background: rgba(0, 0, 0, 0.1);
-    color: #000;
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.router-link-active {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--glass-shadow-hover);
+    color: var(--primary);
+  }
+
+  .nav-menu .github-link {
+    background: var(--glass-bg);
+    border: 2px solid var(--glass-border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-menu .github-link:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    color: var(--white);
+  }
+
+  .nav-menu .github-link svg {
+    width: 24px;
+    height: 24px;
   }
 
   .footer-content {
