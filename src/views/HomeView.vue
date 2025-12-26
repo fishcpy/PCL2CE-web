@@ -46,7 +46,7 @@
         </div>
         <div class="hero-visual">
           <div class="hero-image-container" @mousemove="handleMouseMove" @mouseleave="resetTransform">
-            <img src="/img/f1.png" alt="PCL 界面预览" class="hero-image" ref="heroImage" />
+            <img src="/img/f1.png" alt="PCL 界面预览" class="hero-image" />
             <div class="image-overlay"></div>
           </div>
         </div>
@@ -299,10 +299,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import { useScrollAnimation } from '@/composables/useScrollAnimation';
-
-const heroImage = ref<HTMLElement | null>(null);
 
 // 初始化滚动动画
 useScrollAnimation();
