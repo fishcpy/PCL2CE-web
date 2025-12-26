@@ -34,6 +34,30 @@ body {
   padding: 0;
 }
 
+/* 自定义滚动条样式 */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5dade2 0%, #3498db 100%);
+}
+
+/* Firefox 滚动条样式 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3498db #000000;
+}
+
 /* 毛玻璃装饰元素 */
 body::before {
   content: '';
