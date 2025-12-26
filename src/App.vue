@@ -169,9 +169,22 @@ const closeMenu = () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 40px;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+/* 大屏幕使用更宽的布局 */
+@media (min-width: 1600px) {
+  .nav-container {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .nav-container {
+    max-width: 1800px;
+  }
 }
 
 .brand-link {
