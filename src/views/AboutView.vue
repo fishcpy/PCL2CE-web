@@ -167,7 +167,6 @@
 .link-card:hover {
   background: var(--glass-bg-hover);
   border-color: var(--glass-border-hover);
-  transform: translateX(10px);
   box-shadow: var(--glass-shadow-hover);
 }
 

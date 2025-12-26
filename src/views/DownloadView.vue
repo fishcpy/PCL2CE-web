@@ -270,6 +270,7 @@
   padding: 3rem;
   box-shadow: var(--glass-shadow);
   transition: var(--transition);
+  text-align: center;
 }
 
 .historical-versions-container:hover {
@@ -293,6 +294,8 @@
 .historical-versions-container ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .historical-versions-container li {
