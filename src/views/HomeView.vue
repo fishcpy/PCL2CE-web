@@ -749,6 +749,10 @@ const resetTransform = (event: MouseEvent) => {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
