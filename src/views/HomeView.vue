@@ -681,17 +681,20 @@ const resetTransform = (event: MouseEvent) => {
   color: var(--white);
   margin-bottom: 1rem;
   font-size: 3rem;
+  text-align: center;
 }
 
 .download-text p {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .download-buttons {
   display: flex;
   gap: 1rem;
+  justify-content: center;
 }
 
 .download-card {
