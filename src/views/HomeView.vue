@@ -12,7 +12,7 @@
             {{ t('home.description') }}
           </p>
           <div class="hero-buttons">
-            <router-link to="/download" class="btn btn-primary btn-large">
+            <router-link to="/download" class="btn btn-primary btn-large btn-white">
               <svg
                 width="20"
                 height="20"
@@ -252,7 +252,7 @@
             <h2>{{ t('home.downloadSection.title') }}</h2>
             <p>{{ t('home.downloadSection.desc') }}</p>
             <div class="download-buttons">
-              <router-link to="/download" class="btn btn-primary btn-large">
+              <router-link to="/download" class="btn btn-primary btn-large btn-white">
                 <svg
                   width="24"
                   height="24"
@@ -739,6 +739,18 @@ const resetTransform = (event: MouseEvent) => {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
+}
+
+.btn-white {
+  background: var(--white) !important;
+  color: var(--primary) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-white:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* 响应式设计 */
