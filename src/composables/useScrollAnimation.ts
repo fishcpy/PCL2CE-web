@@ -8,7 +8,6 @@ export function useScrollAnimation() {
     const target = parseInt((element as HTMLElement).dataset.target || '0');
     const suffix = (element as HTMLElement).dataset.suffix || '';
     let current = 0;
-    const increment = target / 100;
     const duration = 2000; // 动画持续时间（毫秒）
     const startTime = performance.now();
 
