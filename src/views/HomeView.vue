@@ -30,11 +30,11 @@
           </div>
           <div class="hero-stats">
             <div class="stat">
-              <span class="stat-number">10K+</span>
+              <span class="stat-number counter" data-target="10000" data-suffix="K+">0</span>
               <span class="stat-label">{{ t('home.stats.activeUsers') }}</span>
             </div>
             <div class="stat">
-              <span class="stat-number">100%</span>
+              <span class="stat-number counter" data-target="100" data-suffix="%">0</span>
               <span class="stat-label">{{ t('home.stats.openSource') }}</span>
             </div>
             <div class="stat">
