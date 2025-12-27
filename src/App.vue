@@ -720,8 +720,24 @@ watch(isMenuOpen, (newValue) => {
     grid-template-columns: 1fr;
   }
 
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
+  .footer-description {
+    text-align: center;
+  }
+
   .footer-bottom {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright-info {
     text-align: center;
   }
 }
