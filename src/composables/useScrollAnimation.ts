@@ -18,8 +18,8 @@ export function useScrollAnimation() {
       }
     );
 
-    // 观察所有带有 scroll-animate 类的元素
-    const elements = document.querySelectorAll('.scroll-animate');
+    // 观察所有带有动画类的元素
+    const elements = document.querySelectorAll('.scroll-animate, .fade-in, .slide-in-left, .slide-in-right, .scale-in, .rotate-in');
     elements.forEach((el) => {
       // 检查元素是否在首屏（视口内）
       const rect = el.getBoundingClientRect();

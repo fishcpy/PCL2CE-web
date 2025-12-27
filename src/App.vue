@@ -74,10 +74,10 @@
       </router-view>
     </main>
 
-    <footer class="main-footer">
+    <footer class="main-footer fade-in">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-section">
+          <div class="footer-section slide-in-left" style="transition-delay: 0.2s;">
             <div class="footer-brand">
               <img src="/img/logo.ico" alt="PCL Logo" class="footer-logo" />
               <div class="brand-info">
@@ -90,7 +90,7 @@
             </p>
           </div>
 
-          <div class="footer-section">
+          <div class="footer-section slide-in-right" style="transition-delay: 0.3s;">
             <h4>{{ t('footer.quickLinks') }}</h4>
             <ul class="footer-links">
               <li><router-link to="/">{{ t('nav.home') }}</router-link></li>
@@ -100,7 +100,7 @@
             </ul>
           </div>
 
-          <div class="footer-section">
+          <div class="footer-section fade-in" style="transition-delay: 0.4s;">
             <h4>{{ t('footer.resources') }}</h4>
             <ul class="footer-links">
               <li><router-link to="/download">{{ t('footer.latestVersion') }}</router-link></li>
@@ -110,7 +110,7 @@
             </ul>
           </div>
 
-          <div class="footer-section">
+          <div class="footer-section slide-in-left" style="transition-delay: 0.5s;">
             <h4>{{ t('footer.community') }}</h4>
             <ul class="footer-links">
               <li><a href="https://github.com/PCL-Community/PCL2-CE" target="_blank">GitHub</a></li>
@@ -128,7 +128,7 @@
           </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom fade-in" style="transition-delay: 0.6s;">
           <div class="footer-info">
             <div class="footer-links-row">
               <a href="https://github.com/PCL-Community/PCL2CE-web" target="_blank" class="footer-link footer-link-icon">

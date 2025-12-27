@@ -53,7 +53,7 @@
     </section>
 
     <!-- 演示视频区域 -->
-    <section class="demo-section">
+    <section class="demo-section fade-in">
       <div class="container">
         <div class="section-header">
           <h2>{{ t('home.videoTitle') }}</h2>
@@ -78,7 +78,7 @@
           <p>{{ t('home.featuresDesc') }}</p>
         </div>
         <div class="features-grid">
-          <div class="feature-card">
+          <div class="feature-card slide-in-left" style="transition-delay: 0.1s;">
             <div class="feature-icon">
               <svg
                 width="48"
@@ -95,7 +95,7 @@
             <p>{{ t('home.features.crashAnalysis.desc') }}</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card slide-in-right" style="transition-delay: 0.2s;">
             <div class="feature-icon">
               <svg
                 width="48"
@@ -112,7 +112,7 @@
             <p>{{ t('home.features.folderManagement.desc') }}</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card scale-in" style="transition-delay: 0.3s;">
             <div class="feature-icon">
               <svg
                 width="48"
@@ -131,7 +131,7 @@
             <p>{{ t('home.features.resourceDownload.desc') }}</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card slide-in-left" style="transition-delay: 0.4s;">
             <div class="feature-icon">
               <svg
                 width="48"
@@ -149,7 +149,7 @@
             <p>{{ t('home.features.multiAccount.desc') }}</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card slide-in-right" style="transition-delay: 0.5s;">
             <div class="feature-icon">
               <svg
                 width="48"
@@ -168,7 +168,7 @@
             <p>{{ t('home.features.javaManagement.desc') }}</p>
           </div>
 
-          <div class="feature-card">
+          <div class="feature-card scale-in" style="transition-delay: 0.6s;">
             <div class="feature-icon">
               <svg
                 width="48"
@@ -199,10 +199,10 @@
         </div>
 
         <div class="screenshot-row scroll-animate">
-          <div class="screenshot-image">
+          <div class="screenshot-image slide-in-left">
             <img src="/img/x1.png" alt="Main Interface" loading="lazy" />
           </div>
-          <div class="screenshot-content">
+          <div class="screenshot-content slide-in-right">
             <h3>{{ t('home.screenshots.main.title') }}</h3>
             <p>{{ t('home.screenshots.main.desc') }}</p>
             <ul class="feature-highlights">
@@ -213,7 +213,7 @@
         </div>
 
         <div class="screenshot-row reverse scroll-animate">
-          <div class="screenshot-content">
+          <div class="screenshot-content slide-in-left">
             <h3>{{ t('home.screenshots.version.title') }}</h3>
             <p>{{ t('home.screenshots.version.desc') }}</p>
             <ul class="feature-highlights">
@@ -222,16 +222,16 @@
               <li>{{ t('home.screenshots.version.features.2') }}</li>
             </ul>
           </div>
-          <div class="screenshot-image">
+          <div class="screenshot-image slide-in-right">
             <img src="/img/x2.png" alt="Version Management" loading="lazy" />
           </div>
         </div>
 
         <div class="screenshot-row scroll-animate">
-          <div class="screenshot-image">
+          <div class="screenshot-image slide-in-left">
             <img src="/img/x3.png" alt="Mod Management" loading="lazy" />
           </div>
-          <div class="screenshot-content">
+          <div class="screenshot-content slide-in-right">
             <h3>{{ t('home.screenshots.mod.title') }}</h3>
             <p>{{ t('home.screenshots.mod.desc') }}</p>
             <ul class="feature-highlights">
@@ -245,10 +245,10 @@
     </section>
 
     <!-- 下载区域 -->
-    <section class="download-section">
-      <div class="container">
-        <div class="download-content">
-          <div class="download-text">
+    <section class="download-section scroll-animate">
+        <div class="container">
+          <div class="download-content">
+            <div class="download-text slide-in-left">
             <h2>{{ t('home.downloadSection.title') }}</h2>
             <p>{{ t('home.downloadSection.desc') }}</p>
             <div class="download-buttons">
@@ -269,8 +269,8 @@
               </router-link>
             </div>
           </div>
-          <div class="download-visual">
-            <div class="download-card">
+            <div class="download-visual scale-in">
+              <div class="download-card">
               <div class="card-header">
                 <div class="card-title">
                   <h3>{{ t('home.downloadSection.cardTitle') }}</h3>
