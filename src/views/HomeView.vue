@@ -292,8 +292,12 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import { useScrollAnimation } from '@/composables/useScrollAnimation';
 
 const { t } = useI18n();
+
+// 初始化滚动动画
+useScrollAnimation();
 
 const handleMouseMove = (event: MouseEvent) => {
   const container = event.currentTarget as HTMLElement;
