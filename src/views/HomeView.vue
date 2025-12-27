@@ -793,5 +793,14 @@ const resetTransform = (event: MouseEvent) => {
   .screenshot-row.reverse {
     flex-direction: column;
   }
+  
+  /* 移动端统一文字在上图片在下 */
+  .screenshot-row .screenshot-content {
+    order: 1;
+  }
+  
+  .screenshot-row .screenshot-image {
+    order: 2;
+  }
 }
 </style>
