@@ -5,7 +5,7 @@
         <div class="nav-brand">
           <router-link to="/" class="brand-link">
             <img src="/img/logo.ico" alt="PCL Logo" class="logo" />
-            <span class="brand-text">PCL 社区版</span>
+            <span class="brand-text">{{ t('home.title') }}</span>
           </router-link>
         </div>
 
@@ -81,8 +81,8 @@
             <div class="footer-brand">
               <img src="/img/logo.ico" alt="PCL Logo" class="footer-logo" />
               <div class="brand-info">
-                <h3>PCL 社区版</h3>
-                <p>开源免费的 Minecraft 启动器</p>
+                <h3>{{ t('home.title') }}</h3>
+                <p>{{ t('home.subtitle') }}</p>
               </div>
             </div>
             <p class="footer-description">
@@ -130,7 +130,6 @@
 
         <div class="footer-bottom">
           <div class="footer-info">
-            <p>© PCL Community {{ currentYear }} {{ t('footer.copyright') }}</p>
             <div class="footer-links-row">
               <a href="https://github.com/PCL-Community/PCL2CE-web" target="_blank" class="footer-link footer-link-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -139,11 +138,14 @@
                 {{ t('footer.websiteRepo') }}
               </a>
               <a href="https://beian.miit.gov.cn" target="_blank" class="footer-link footer-link-icon">
-                京ICP备2025138063号
+                {{ t('footer.icpRecord') }}
               </a>
             </div>
           </div>
           <div class="copyright-info">
+            <p>
+              © PCL Community {{ currentYear }} {{ t('footer.copyright') }}
+            </p>
             <p>
               {{ t('footer.disclaimer') }}
             </p>
@@ -566,12 +568,18 @@ watch(isMenuOpen, (newValue) => {
   font-size: 0.85rem;
 }
 
+.copyright-info {
+  text-align: right;
+}
+
 .footer-links-row {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  display: block;
   margin-top: 0.5rem;
+}
+
+.footer-links-row > a {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .footer-link {
