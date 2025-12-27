@@ -159,6 +159,7 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { useScrollAnimation } from './composables/useScrollAnimation';
 
 const { t, locale } = useI18n();
 const isMenuOpen = ref(false);
@@ -210,6 +211,9 @@ watch(isMenuOpen, (newValue) => {
     document.body.style.overflow = '';
   }
 });
+
+// 初始化滚动动画，确保所有页面的动画元素都能正常工作
+useScrollAnimation();
 </script>
 
 <style scoped>
